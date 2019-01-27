@@ -1,5 +1,5 @@
 # spring-cloud-bus
-## Summary of Notes
+
 For config server changes the client is responsible for checking for updates and refresh the config.
 To implement a system where the config is pushed to the client instead and the client does not need a restart we can utilize Spring cloud bus.  The way it works is that any change that config server receives is pushed onto a queue[RabbitMQ/Kafka], and the clients can subscribe to the change using the amqp client. 
 The only manual step in this setup will be to update the config server once the property repository is changed.
