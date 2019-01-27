@@ -1,0 +1,15 @@
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SomeCoolApps/configServer
+          searchPaths: 
+server:
+  port: 8010
+
+# This controls which Actuator web endpoints are exposed.  
+# Ordinarily, only /actuator/health and /actuator/info are exposed, 
+# But we need to allow external parties to POST to /bus-refresh:    
+management.endpoints.web.exposure.include: health,info,bus-refresh   
